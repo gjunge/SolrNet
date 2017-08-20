@@ -1,4 +1,8 @@
-version: 0.7.1.{build}
+# common configuration for ALL branches
+
+environment:
+  baseversion: 0.7.1
+version: '%baseversion%.{build}-pre'
 image: Visual Studio 2017
 before_build:
 - cmd: nuget restore solrnet.sln
@@ -14,3 +18,21 @@ test:
     except:
     - Integration
     - OutDated
+
+
+# here we are going to override common configuration
+for:
+-
+  branches:
+    only:
+      - master
+  version: '%baseversion%'
+
+# override settings for `release-*` branches
+-
+  branches:
+    only:
+      - /release-.*/
+  version: '%baseversion%.{build}-rc'
+ 
+ 
