@@ -2,7 +2,7 @@
 
 environment:
   baseversion: 0.7.1
-version: '%baseversion%.{build}-pre'
+version: '%baseversion%.{build}-alpha'
 image: Visual Studio 2017
 before_build:
 - cmd: nuget restore solrnet.sln
