@@ -2,7 +2,7 @@
 
 environment:
   baseversion: 0.7.1
-version: '%baseversion%.{build}-alpha'
+version: '{baseversion}.{build}-alpha'
 image: Visual Studio 2017
 before_build:
 - cmd: nuget restore solrnet.sln
@@ -26,13 +26,13 @@ for:
   branches:
     only:
       - master
-  version: '%baseversion%'
+  version: '{baseversion}'
 
 # override settings for `release-*` branches
 -
   branches:
     only:
       - /release-.*/
-  version: '%baseversion%.{build}-rc'
+  version: '{baseversion}.{build}-rc'
  
  
