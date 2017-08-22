@@ -25,15 +25,15 @@ for:
   branches:
     only:
       - master
-  version: '{version}'
+  version: '%version%'
 
 # override settings for `release-*` branches
 -
   branches:
     only:
       - /release-.*/
-  version: '{version}.{build}-rc'
+  version: '%version%.{build}-rc'
 
 # "fall back" configuration for all other branches
 - 
-  version: '{version}.{build}-alpha'
+  version: '%version%.%baseversion%.{build}-alpha'
