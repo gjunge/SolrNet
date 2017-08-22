@@ -1,7 +1,7 @@
 # common configuration for ALL branches
 environment:
   baseversion: '0.7.1'
-    
+version: 0.7.1
 image: Visual Studio 2017
 before_build:
 - cmd: nuget restore solrnet.sln
@@ -25,15 +25,15 @@ for:
   branches:
     only:
       - master
-  version: '{baseversion}'
+  version: '{version}'
 
 # override settings for `release-*` branches
 -
   branches:
     only:
       - /release-.*/
-  version: '{baseversion}.{build}-rc'
+  version: '{version}.{build}-rc'
 
 # "fall back" configuration for all other branches
 - 
-  version: '{baseversion}.{build}-alpha'
+  version: '{version}.{build}-alpha'
