@@ -1,4 +1,5 @@
 # common configuration for ALL branches
+version: 0.1.1
 environment:
   baseversion: '0.7.1'
 
