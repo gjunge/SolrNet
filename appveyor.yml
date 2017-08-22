@@ -32,5 +32,7 @@ for:
     only:
       - /release-.*/
   version: '0.7.1.{build}-rc'
- 
- 
+
+# "fall back" configuration for all other branches
+ - 
+  version: '0.7.1.{build}-alpha'
